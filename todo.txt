@@ -1,0 +1,6 @@
+Get user file to user-followers-mapping data structure
+Get tweets file to tweets list
+Tests
+Error handling
+Formatting output
+Go through each user to display tweets

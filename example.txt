@@ -1,0 +1,22 @@
+user.txt:
+
+Ward follows Alan
+Alan follows Martin
+Ward follows Martin, Alan
+
+tweet.txt:
+
+Alan> If you have a procedure with 10 parameters, you probably missed some.
+Ward> There are only two hard things in Computer Science: cache invalidation, naming things and off-by-1 errors.
+Alan> Random numbers should not be generated with a method chosen at random.
+
+console output:
+
+Alan
+@Alan: If you have a procedure with 10 parameters, you probably missed some.
+@Alan: Random numbers should not be generated with a method chosen at random.
+Martin
+Ward
+@Alan: If you have a procedure with 10 parameters, you probably missed some.
+@Ward: There are only two hard things in Computer Science: cache invalidation, naming things and off-by-1 errors.
+@Alan: Random numbers should not be generated with a method chosen at random.
