@@ -13,7 +13,7 @@ if __name__ == '__main__':
         print('Wrong number of arguments.')
     user_parser = UserParser()
     tweet_parser = TweetParser()
-    user_tweet_simulation = UserTweetSimulation() 
+    user_tweet_simulation = Simulation() 
 
     users = user_parser.get_users(user_file)
     user_followers_mapping = user_parser.get_user_followers_mapping(user_file)
