@@ -1,1 +1,1 @@
-PYTHONPATH=. ptw
+PYTHONPATH=./src ptw

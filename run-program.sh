@@ -1,0 +1,1 @@
+export PYTHONPATH=/home/nicol/Repos/twitter-feed/src
