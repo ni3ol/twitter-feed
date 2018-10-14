@@ -14,13 +14,13 @@ class TestSimulation(unittest.TestCase):
         expected_result = ('Ward', ['Martin', 'Alan'])
         assert result == expected_result
 
-    def test_update_empty_user_followers_mapping_returns_user_and_their_users_followed(self):
+    def test_update_empty_user_followers_mapping_returns_user_and_followers_tuple(self):
         user_followers = ('Ward', ['Martin', 'Alan'])
         result = update_user_followers_mapping({}, user_followers)
         expected_result = ('Ward', {'Martin', 'Alan'})
         assert result == expected_result
 
-    def test_update_user_followers_mapping_returns_user_and_updated_users_followed(self):
+    def test_update_user_followers_mapping_returns_user_and_updated_followers_tuple(self):
         user_followers = ('Ward', ['Martin', 'Alan'])
         result = update_user_followers_mapping({'Ward': {'Martin'}}, user_followers)
         expected_result = ('Ward', {'Martin', 'Alan'})

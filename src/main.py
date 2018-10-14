@@ -1,4 +1,6 @@
+import os
 import sys
+import warnings
 
 def format_user_followers_entry(entry):
     '''Takes a user followers entry and formats it into a tuple of user and the users they follow.
@@ -65,6 +67,8 @@ def format_tweet_entry(entry):
     user = user.replace('>', '')
     tweet = entry.split(' ', 1)[1]
     tweet = tweet.rstrip()
+    if len(tweet) > 140:
+        warnings.warn('File contains tweets longer than 140 characters.')
     return user, tweet
 
 def format_tweet(tweet):
@@ -103,6 +107,7 @@ if __name__ == '__main__':
         tweet_file = sys.argv[2]
     except IOError:
         print('Wrong number of arguments.')
+
     users = get_users(user_file)
     user_followers_mapping = get_user_followers_mapping(user_file)
     tweets = get_tweets(tweet_file)
