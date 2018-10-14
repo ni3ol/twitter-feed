@@ -1,0 +1,6 @@
+Ward follows Alan
+Alan follows Martin
+Ward follows Martin, Alan
+Martin follows Ward
+Gary follows Jason
+Pierre follows Ward, Martin, Sue
