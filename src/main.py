@@ -5,12 +5,14 @@ from tweet_parser import TweetParser
 from simulation import Simulation
 
 
-if __name__ == '__main__':
-    try:
-        user_file = sys.argv[1]
-        tweet_file = sys.argv[2]
-    except:
+def main():
+    if len(sys.argv) != 3:
         print('Wrong number of arguments.')
+        return
+    
+    user_file = sys.argv[1]
+    tweet_file = sys.argv[2]
+    
     user_parser = UserParser()
     tweet_parser = TweetParser()
     user_tweet_simulation = Simulation() 
@@ -21,3 +23,7 @@ if __name__ == '__main__':
     simulation = user_tweet_simulation.get_simulation(users, user_followers_mapping, tweets)
     for entry in simulation:
         print(entry)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,1 +1,6 @@
-PYTHONPATH=./src ptw
+#!/bin/sh
+
+set -ex
+
+export PYTHONPATH=./src
+exec pytest

@@ -1,22 +1,23 @@
 import os
 import sys
 import warnings
-from tweet_handler import TweetHandler
+from tweet_handler import TweetHandler, FormatError
+
 
 class TweetParser(object):
-    def get_tweets(self, tweet_file):
+    def get_tweets(self, tweet_filename):
         '''Get user and tweet and output as tuple.
         '''
         tweets = []
         tweet_handler = TweetHandler()
         try:
-            file = open(tweet_file, 'r')
+            with open(tweet_filename, 'r') as tweet_file:
+                for entry in tweet_file:
+                    formatted_entry = tweet_handler.format_tweet_entry(entry)
+                    tweets.append(formatted_entry)
+                return tweets
         except IOError:
             print('The file cannot be opened.')
-        for entry in file:
-            try:
-                formatted_entry = tweet_handler.format_tweet_entry(entry)
-            except:
-                print('Tweet file entry incorrectly formatted')
-            tweets.append(formatted_entry)
-        return tweets
+        except FormatError:
+            print('Tweet file entry incorrectly formatted')
+        

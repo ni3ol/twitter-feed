@@ -1,2 +1,6 @@
+#!/bin/sh
+
+set -ex
+
 export PYTHONPATH=$(pwd)/src
-python src/main.py $0 $1
+exec python src/main.py $1 $2

@@ -12,7 +12,9 @@ class TestSimulation(unittest.TestCase):
         expected_result = {'Alan', 'Martin', 'Ward'}
         assert result == expected_result
 
-    def test_get_user_followers_mapping_returns_mapping_of_users_to_followers_from_user_file(self):
+    def test_get_user_followers_mapping_returns_correct_mapping(self):
+        """" TODO: Exlain f_users_to_followers_from_user_fileello apping_of_users_to_followers_from_user_file
+        """
         result = self.user_parser.get_user_followers_mapping('./data/user.txt')
         expected_result = {'Alan': {'Martin'}, 'Ward': {'Alan', 'Martin'}}
         assert result == expected_result
